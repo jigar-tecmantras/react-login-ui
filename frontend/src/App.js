@@ -63,7 +63,7 @@ function App() {
       <main className="login-card">
         <header className="card-header">
           <span className="brand-pill">Lumi</span>
-          <h1>Welcome back</h1>
+          <h1>Welcome again</h1>
           <p>Securely sign in to access your dashboard.</p>
         </header>
 
