@@ -1,0 +1,245 @@
+:root {
+  --card: rgba(14, 21, 45, 0.88);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --accent: #6b58ff;
+  --accent-strong: #8b5cf6;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top right, #1f1b4a, #05060f 50%);
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.background-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  filter: blur(120px);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.glow-a {
+  top: -60px;
+  right: -60px;
+  background: radial-gradient(circle, rgba(121, 66, 255, 0.7), transparent 60%);
+}
+
+.glow-b {
+  bottom: -80px;
+  left: -30px;
+  background: radial-gradient(circle, rgba(255, 89, 144, 0.6), transparent 60%);
+}
+
+.login-card {
+  position: relative;
+  width: min(420px, 100%);
+  padding: 2.75rem 2.25rem;
+  border-radius: 28px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 25px 65px rgba(5, 7, 19, 0.45);
+  z-index: 1;
+}
+
+.card-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.card-header p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.brand-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #d8d8ff;
+}
+
+form {
+  margin-top: 1.5rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.1rem;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.form-field input {
+  border-radius: 999px;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid transparent;
+  background: var(--input-bg);
+  color: #fff;
+  font-size: 1rem;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.form-field input:focus {
+  outline: none;
+  border: 1px solid rgba(109, 92, 230, 0.6);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.error-text {
+  font-size: 0.8rem;
+  color: #ff8ea2;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.remember-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.remember-line input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+.text-link {
+  color: #c3c3ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.text-link:hover {
+  color: #fff;
+}
+
+.info-line {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 0.95rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(0.35);
+}
+
+.primary-btn:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 15px 30px rgba(107, 88, 255, 0.45);
+}
+
+.divider {
+  margin: 1.5rem 0 1.1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 38%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.social-btn {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.65rem 0;
+  font-size: 0.85rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: border 0.2s ease, transform 0.2s ease;
+}
+
+.social-btn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.card-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .social-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
